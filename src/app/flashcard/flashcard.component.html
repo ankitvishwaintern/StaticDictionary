@@ -1,0 +1,23 @@
+<div class="flashcard" [class.flipped]="isFlipped" (click)="flip()">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="header"></div>
+      <div class="content">
+        <div class="picture-container">
+          <img [src]="word.picture" [alt]="word.term" class="word-picture">
+        </div>
+        <h2 class="term">{{word.term}}</h2>
+        <p class="phonetic">/{{word.term.toLowerCase()}}/</p>
+        <p class="meaning">{{word.meaning}}</p>
+      </div>
+    </div>
+    <div class="flashcard-back">
+      <div class="content">
+        <h3>Meaning:</h3>
+        <p>{{word.meaning}}</p>
+        <h3>Mnemonic:</h3>
+        <p>{{word.mnemonic}}</p>
+      </div>
+    </div>
+  </div>
+</div>

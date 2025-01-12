@@ -1,0 +1,41 @@
+.flashcards-container {
+  padding: 2rem;
+  background: #F5F7FF;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcard-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  background-color: #6B5ED9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+button:disabled {
+  background-color: #E0E4F5;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #5648C0;
+  transform: translateY(-2px);
+}

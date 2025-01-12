@@ -1,0 +1,12 @@
+<div class="flashcards-container">
+  <div class="flashcard-wrapper">
+    <app-flashcard 
+      *ngIf="currentWord"
+      [word]="currentWord">
+    </app-flashcard>
+  </div>
+  <div class="navigation">
+    <button (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+    <button (click)="nextPage()" [disabled]="currentPage >= maxPages - 1">Next</button>
+  </div>
+</div>
