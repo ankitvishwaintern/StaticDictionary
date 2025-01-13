@@ -15,12 +15,26 @@ export class FlashcardComponent {
 
   flip() {
     this.isFlipped = !this.isFlipped;
+    // if ('speechSynthesis' in window) {
+    //   const synth = window.speechSynthesis;
+    //   const utterance = new SpeechSynthesisUtterance('hello');
+    //   synth.speak(utterance);
+    // } else {
+    //   console.log('Text-to-speech not supported');
+    // }
+  }
+
+  pronounceWord(event: MouseEvent) {
+    event.stopPropagation(); // Prevent card flip when clicking the pronunciation icon
+    
     if ('speechSynthesis' in window) {
-      const synth = window.speechSynthesis;
-      const utterance = new SpeechSynthesisUtterance('hello');
-      synth.speak(utterance);
+      const utterance = new SpeechSynthesisUtterance(this.word.term);
+      utterance.rate = 0.8; // Slightly slower rate for better clarity
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      window.speechSynthesis.speak(utterance);
     } else {
-      console.log('Text-to-speech not supported');
+      console.log('Text-to-speech not supported in this browser');
     }
   }
 }

@@ -6,8 +6,11 @@
         <div class="picture-container">
           <img [src]="word.picture" [alt]="word.term" class="word-picture">
         </div>
-        <h2 class="term">{{word.term}}</h2>
-        <p class="phonetic">/{{word.term.toLowerCase()}}/</p>
+        <div class="term-container">
+          <h2 class="term">{{word.term}}</h2>
+          <span class="pronunciation-icon" (click)="pronounceWord($event)">🔊</span>
+        </div>
+        <p class="phonetic">/{{word.pronunciation.toLowerCase()}}/</p>
         <p class="meaning">{{word.meaning}}</p>
       </div>
     </div>
@@ -17,6 +20,8 @@
         <p>{{word.meaning}}</p>
         <h3>Mnemonic:</h3>
         <p>{{word.mnemonic}}</p>
+        <h3>Usage:</h3>
+        <p>{{word.usage}}</p>
       </div>
     </div>
   </div>

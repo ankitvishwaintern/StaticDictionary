@@ -4,4 +4,6 @@ export interface Word {
   picture: string;
   meaning: string;
   mnemonic: string;
+  pronunciation:string;
+  usage:string;
 }

@@ -67,10 +67,31 @@
   object-fit: cover;
 }
 
+.term-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .term {
   font-size: 2.5rem;
   margin: 0.5rem 0;
   color: #333;
+}
+
+.pronunciation-icon {
+  cursor: pointer;
+  color: #6B5ED9;
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.pronunciation-icon:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
 }
 
 .phonetic {
