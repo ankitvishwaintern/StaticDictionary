@@ -1,4 +1,13 @@
 <div class="flashcards-container">
+  <div class="search-container">
+    <input 
+      type="text" 
+      class="search-input" 
+      placeholder="Search for a word..."
+      [(ngModel)]="searchTerm"
+      (keyup.enter)="searchWord()">
+    <button class="search-button" (click)="searchWord()">Search</button>
+  </div>
   <div class="flashcard-wrapper">
     <app-flashcard 
       *ngIf="currentWord"
@@ -6,7 +15,9 @@
     </app-flashcard>
   </div>
   <div class="navigation">
+    <button (click)="firstPage()" [disabled]="currentPage === 0">First</button>
     <button (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
     <button (click)="nextPage()" [disabled]="currentPage >= maxPages - 1">Next</button>
+    <button (click)="lastPage()" [disabled]="currentPage >= maxPages - 1">Last</button>
   </div>
 </div>

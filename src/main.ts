@@ -38,61 +38,72 @@ const routes: Routes = [
   `,
   styles: [`
     .app-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-    header {
-      margin-bottom: 2rem;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .brand {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      color: #333;
-      margin: 0;
-      font-size: 2rem;
-    }
-    .tagline {
-      color: #666;
-      margin: 0.5rem 0 0;
-      font-style: italic;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      border-top: 1px solid #eee;
-      margin-top: 1rem;
-    }
-    nav a {
-      color: #666;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: all 0.3s;
-    }
-    nav a:hover {
-      color: #4CAF50;
-      background: #f5f5f5;
-    }
-    nav a.active {
-      color: #4CAF50;
-      font-weight: bold;
-    }
-    main {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 2rem;
-    }
-  `]
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+header {
+  margin-bottom: 0.25rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.brand {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+h1 {
+  color: #333;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.tagline {
+  color: #666;
+  margin: 0.15rem 0 0;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.25rem 0;
+}
+
+nav a {
+  color: #666;
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  color: #4CAF50;
+  background: #f5f5f5;
+}
+
+nav a.active {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+main {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.75rem;
+}`]
 })
 export class App {
   constructor() {}
