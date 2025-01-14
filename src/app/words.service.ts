@@ -30,1081 +30,1081 @@ export class WordsService {
           "term": "abase",
           "picture": "https://artymarty99.wordpress.com/wp-content/uploads/2016/03/fb_img_1456490561431.jpg",
           "meaning": "To humiliate or degrade oneself or someone else.",
-          "mnemonic": "",
+          "mnemonic": "Imagine bringing someone 'a base' to make them feel lower.",
           "pronunciation": "uh-bays",
           "usage": "Politicians abasing themselves before wealthy businessmen"
-      },
-      {
+        },
+        {
           "id": 2,
           "term": "abash",
           "picture": "https://images.pexels.com/photos/123457/pexels-photo-123457.jpeg",
           "meaning": "To cause embarrassment or discomfort.",
-          "mnemonic": "",
+          "mnemonic": "Think of someone being 'bashed' with embarrassment.",
           "pronunciation": "uh-bash",
           "usage": "She felt abashed when the teacher pointed out her mistake in front of everyone."
-      },
-      {
+        },
+        {
           "id": 3,
           "term": "abate",
           "picture": "https://images.pexels.com/photos/123458/pexels-photo-123458.jpeg",
           "meaning": "To lessen in intensity or degree.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'a bait' losing its effect on fish.",
           "pronunciation": "uh-bayt",
           "usage": "The storm finally abated, leaving the town in peace."
-      },
-      {
+        },
+        {
           "id": 4,
           "term": "abbreviate",
           "picture": "https://images.pexels.com/photos/123459/pexels-photo-123459.jpeg",
           "meaning": "To shorten a word, phrase, or text.",
-          "mnemonic": "",
+          "mnemonic": "Abbreviate has 'brev,' which means short in Latin.",
           "pronunciation": "uh-bree-vee-ayt",
           "usage": "The company decided to abbreviate its name for branding purposes."
-      },
-      {
+        },
+        {
           "id": 5,
           "term": "abdicate",
           "picture": "https://images.pexels.com/photos/123460/pexels-photo-123460.jpeg",
           "meaning": "To formally give up a position of power or responsibility.",
-          "mnemonic": "",
+          "mnemonic": "Abdicate sounds like 'abandon the dictation' or throne.",
           "pronunciation": "ab-di-kayt",
           "usage": "The king abdicated his throne to marry a commoner."
-      },
-      {
+        },
+        {
           "id": 6,
           "term": "aberrant",
           "picture": "https://images.pexels.com/photos/123461/pexels-photo-123461.jpeg",
           "meaning": "Deviating from the norm or what is expected.",
-          "mnemonic": "",
+          "mnemonic": "An ant going on a different path (aberrant).",
           "pronunciation": "uh-beh-ruhnt",
           "usage": "His aberrant behavior puzzled everyone at the meeting."
-      },
-      {
+        },
+        {
           "id": 7,
           "term": "aberration",
           "picture": "https://images.pexels.com/photos/123462/pexels-photo-123462.jpeg",
           "meaning": "A departure from what is normal or expected.",
-          "mnemonic": "",
+          "mnemonic": "Think of a 'rare action' that deviates from the norm.",
           "pronunciation": "ab-uh-ray-shun",
           "usage": "The sudden drop in temperature was an aberration for the season."
-      },
-      {
+        },
+        {
           "id": 8,
           "term": "abet",
           "picture": "https://images.pexels.com/photos/123463/pexels-photo-123463.jpeg",
           "meaning": "To assist or encourage, especially in wrongdoing.",
-          "mnemonic": "",
+          "mnemonic": "A bet might encourage someone to do something risky.",
           "pronunciation": "uh-bet",
           "usage": "The lawyer was accused of abetting his client's illegal activities."
-      },
-      {
+        },
+        {
           "id": 9,
           "term": "abeyance",
           "picture": "https://images.pexels.com/photos/123464/pexels-photo-123464.jpeg",
           "meaning": "A state of temporary suspension or inactivity.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'obeying' the pause in action.",
           "pronunciation": "uh-bay-uhns",
           "usage": "The project was held in abeyance until further notice."
-      },
-      {
+        },
+        {
           "id": 10,
           "term": "abhor",
           "picture": "https://images.pexels.com/photos/123465/pexels-photo-123465.jpeg",
           "meaning": "To detest or hate strongly.",
-          "mnemonic": "",
+          "mnemonic": "Sounds like 'a bore,' which you hate.",
           "pronunciation": "ab-hor",
           "usage": "She abhors violence and always advocates for peaceful solutions."
-      },
-      {
+        },
+        {
           "id": 11,
           "term": "abide",
           "picture": "",
           "meaning": "To tolerate, endure, or follow.",
-          "mnemonic": "",
+          "mnemonic": "Abide by the rules to stay in line.",
           "pronunciation": "uh-bahyd",
           "usage": "You must abide by the rules to participate in the event."
-      },
-      {
+        },
+        {
           "id": 12,
           "term": "abject",
           "picture": "",
           "meaning": "Extremely bad, degrading, or hopeless.",
-          "mnemonic": "",
+          "mnemonic": "Imagine being rejected, leading to an abject state.",
           "pronunciation": "ab-jekt",
           "usage": "They lived in abject poverty after losing everything in the fire."
-      },
-      {
+        },
+        {
           "id": 13,
           "term": "abjure",
           "picture": "",
           "meaning": "To renounce or reject solemnly.",
-          "mnemonic": "",
+          "mnemonic": "Abjure sounds like 'jury,' where you formally renounce guilt.",
           "pronunciation": "ab-joor",
           "usage": "He abjured his allegiance to the old regime."
-      },
-      {
+        },
+        {
           "id": 14,
           "term": "ablution",
           "picture": "",
           "meaning": "A ceremonial act of washing.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'a blue solution' used for washing.",
           "pronunciation": "ab-loo-shun",
           "usage": "Morning ablutions are a common part of daily rituals in many cultures."
-      },
-      {
+        },
+        {
           "id": 15,
           "term": "abnegation",
           "picture": "",
           "meaning": "The act of rejecting or renouncing something.",
-          "mnemonic": "",
+          "mnemonic": "Ab-negation sounds like 'negate,' to deny oneself.",
           "pronunciation": "ab-ni-gay-shun",
           "usage": "Her abnegation of luxury surprised her wealthy family."
-      },
-      {
+        },
+        {
           "id": 16,
           "term": "abode",
           "picture": "",
           "meaning": "A place of residence; a home.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'abode' as 'a boat' where one lives temporarily.",
           "pronunciation": "uh-bohd",
           "usage": "The cottage became their permanent abode after retirement."
-      },
-      {
+        },
+        {
           "id": 17,
           "term": "abolish",
           "picture": "",
           "meaning": "To formally put an end to a system, practice, or institution.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'a bolt' shutting down the old ways.",
           "pronunciation": "uh-bol-ish",
           "usage": "The government abolished the outdated law after public protests."
-      },
-      {
+        },
+        {
           "id": 18,
           "term": "abominable",
           "picture": "",
           "meaning": "Hateful, detestable, or loathsome.",
-          "mnemonic": "",
+          "mnemonic": "The abominable snowman is something everyone detests.",
           "pronunciation": "uh-bom-uh-nuh-buhl",
           "usage": "The movie's abominable plot made it a failure at the box office."
-      },
-      {
+        },
+        {
           "id": 19,
           "term": "abominate",
           "picture": "",
           "meaning": "To hate or loathe intensely.",
-          "mnemonic": "",
+          "mnemonic": "Abominate sounds like 'a bomb,' which is destructive and hated.",
           "pronunciation": "uh-bom-uh-nayt",
           "usage": "He abominates dishonesty in all its forms."
-      },
-      {
+        },
+        {
           "id": 20,
           "term": "aboriginal",
           "picture": "",
           "meaning": "Being the first or earliest of its kind in a region.",
-          "mnemonic": "",
+          "mnemonic": "Ab-original—'original inhabitants' of a place.",
           "pronunciation": "ab-uh-rij-uh-nuhl",
           "usage": "The museum featured artifacts from the aboriginal tribes of the region."
-      },
-      {
+        },
+        {
           "id": 21,
           "term": "abortive",
           "picture": "",
           "meaning": "Failing to achieve the intended outcome; unsuccessful.",
-          "mnemonic": "",
+          "mnemonic": "Abortive sounds like 'abort,' meaning to end something before completion.",
           "pronunciation": "uh-bor-tiv",
           "usage": "The mission was abortive due to unexpected technical issues."
-      },
-      {
+        },
+        {
           "id": 22,
           "term": "abrasive",
           "picture": "",
           "meaning": "Rough or harsh in manner or texture.",
-          "mnemonic": "",
+          "mnemonic": "Abrasive sounds like 'abrade,' meaning to wear away by rubbing.",
           "pronunciation": "uh-bray-siv",
           "usage": "His abrasive comments alienated many of his colleagues."
-      },
-      {
+        },
+        {
           "id": 23,
           "term": "abridge",
           "picture": "",
           "meaning": "To shorten or condense something while retaining the essential elements.",
-          "mnemonic": "",
+          "mnemonic": "Think of a 'bridge' shortening the distance.",
           "pronunciation": "uh-brij",
           "usage": "The editor decided to abridge the novel to make it suitable for young readers."
-      },
-      {
+        },
+        {
           "id": 24,
           "term": "abrogate",
           "picture": "",
           "meaning": "To abolish or annul by authority.",
-          "mnemonic": "",
+          "mnemonic": "Abrogate sounds like 'a bro gate,' which you close to nullify access.",
           "pronunciation": "ab-roh-gayt",
           "usage": "The treaty was abrogated by the newly elected government."
-      },
-      {
+        },
+        {
           "id": 25,
           "term": "abscission",
           "picture": "",
           "meaning": "The act of cutting off or removing.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'scissors' for cutting off.",
           "pronunciation": "ab-sish-uhn",
           "usage": "The abscission of leaves is a natural process in autumn."
-      },
-      {
+        },
+        {
           "id": 26,
           "term": "abscond",
           "picture": "",
           "meaning": "To leave secretly, often to avoid capture.",
-          "mnemonic": "",
+          "mnemonic": "Abscond sounds like 'absent in a second,' indicating escape.",
           "pronunciation": "ab-skond",
           "usage": "The cashier absconded with the company's funds."
-      },
-      {
+        },
+        {
           "id": 27,
           "term": "absolute",
           "picture": "",
           "meaning": "Complete and total; not restricted or limited.",
-          "mnemonic": "",
+          "mnemonic": "Absolute means 'all solution,' covering everything.",
           "pronunciation": "ab-suh-loot",
           "usage": "Her absolute confidence inspired the team to push harder."
-      },
-      {
+        },
+        {
           "id": 28,
           "term": "absolve",
           "picture": "",
           "meaning": "To clear someone of blame or guilt.",
-          "mnemonic": "",
+          "mnemonic": "Absolve sounds like 'solve,' as in solving a problem by forgiving it.",
           "pronunciation": "ab-zolv",
           "usage": "The priest absolved him of his sins after confession."
-      },
-      {
+        },
+        {
           "id": 29,
           "term": "abstain",
           "picture": "",
           "meaning": "To deliberately choose not to do something.",
-          "mnemonic": "",
+          "mnemonic": "Abstain sounds like 'stay away,' indicating self-restraint.",
           "pronunciation": "ab-stayn",
           "usage": "He abstained from voting due to a conflict of interest."
-      },
-      {
+        },
+        {
           "id": 30,
           "term": "abstemious",
           "picture": "",
           "meaning": "Moderate or sparing, especially in eating and drinking.",
-          "mnemonic": "",
+          "mnemonic": "Abstemious sounds like 'abstain from excess.'",
           "pronunciation": "ab-stee-mee-uhs",
           "usage": "She maintained an abstemious diet to stay healthy."
-      },
-      {
+        },
+        {
           "id": 31,
           "term": "abstinence",
           "picture": "",
           "meaning": "The practice of refraining from indulgences.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'abstain,' avoiding indulgences like alcohol.",
           "pronunciation": "ab-sti-nuhns",
           "usage": "Abstinence from alcohol was part of his recovery program."
-      },
-      {
+        },
+        {
           "id": 32,
           "term": "abstract",
           "picture": "",
           "meaning": "Existing in thought or as an idea but not physically concrete.",
-          "mnemonic": "",
+          "mnemonic": "Abstract art is often conceptual and not tangible.",
           "pronunciation": "ab-strakt",
           "usage": "The abstract nature of his art confuses many viewers."
-      },
-      {
+        },
+        {
           "id": 33,
           "term": "abstruse",
           "picture": "",
           "meaning": "Difficult to understand; obscure.",
-          "mnemonic": "",
+          "mnemonic": "Abstruse sounds like 'abstract and confusing.'",
           "pronunciation": "ab-stroos",
           "usage": "The professor's abstruse explanation left the students perplexed."
-      },
-      {
+        },
+        {
           "id": 34,
           "term": "abusive",
           "picture": "",
           "meaning": "Cruel or violent, especially verbally or physically.",
-          "mnemonic": "",
+          "mnemonic": "Abusive sounds like 'abuse,' referring to harmful behavior.",
           "pronunciation": "uh-byoo-siv",
           "usage": "The organization provides support for victims of abusive relationships."
-      },
-      {
+        },
+        {
           "id": 35,
           "term": "abut",
           "picture": "",
           "meaning": "To be next to or share a boundary with.",
-          "mnemonic": "",
+          "mnemonic": "Think of a 'butt' joining two parts together.",
           "pronunciation": "uh-buht",
           "usage": "Their property abuts a beautiful lake."
-      },
-      {
+        },
+        {
           "id": 36,
           "term": "abysmal",
           "picture": "",
           "meaning": "Extremely bad or appalling.",
-          "mnemonic": "",
+          "mnemonic": "Abysmal sounds like 'a-bye-small,' sinking into an abyss.",
           "pronunciation": "uh-biz-muhl",
           "usage": "Usage example for 'abysmal' is not defined."
-      },
-      {
+        },
+        {
           "id": 37,
           "term": "abyss",
           "picture": "",
           "meaning": "A deep or seemingly bottomless chasm.",
-          "mnemonic": "",
+          "mnemonic": "Abyss sounds like 'a base,' as in the deep base of something.",
           "pronunciation": "uh-bis",
           "usage": "Usage example for 'abyss' is not defined."
-      },
-      {
+        },
+        {
           "id": 38,
           "term": "academic",
           "picture": "",
           "meaning": "Relating to education or scholarly pursuits.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'academia,' the world of learning.",
           "pronunciation": "ak-uh-dem-ik",
           "usage": "Usage example for 'academic' is not defined."
-      },
-      {
+        },
+        {
           "id": 39,
           "term": "accede",
           "picture": "",
           "meaning": "To agree to a demand or request.",
-          "mnemonic": "",
+          "mnemonic": "Accede sounds like 'agree to proceed.'",
           "pronunciation": "ak-seed",
           "usage": "Usage example for 'accede' is not defined."
-      },
-      {
+        },
+        {
           "id": 40,
           "term": "accelerate",
           "picture": "",
           "meaning": "To increase in speed or make something happen faster.",
-          "mnemonic": "",
+          "mnemonic": "Accelerate sounds like 'excel rate,' to speed up progress.",
           "pronunciation": "ak-sel-uh-rayt",
           "usage": "Usage example for 'accelerate' is not defined."
-      },
-      {
+        },
+        {
           "id": 41,
           "term": "accessible",
           "picture": "",
           "meaning": "Easy to approach, reach, or use.",
-          "mnemonic": "",
+          "mnemonic": "Accessible sounds like 'access,' meaning easy to reach.",
           "pronunciation": "ak-ses-uh-buhl",
           "usage": "Usage example for 'accessible' is not defined."
-      },
-      {
+        },
+        {
           "id": 42,
           "term": "accessory",
           "picture": "",
           "meaning": "A supplementary or additional item.",
-          "mnemonic": "",
+          "mnemonic": "Accessory adds success by complementing the main item.",
           "pronunciation": "ak-ses-uh-ree",
           "usage": "Usage example for 'accessory' is not defined."
-      },
-      {
+        },
+        {
           "id": 43,
           "term": "acclaim",
           "picture": "",
           "meaning": "To praise enthusiastically and publicly.",
-          "mnemonic": "",
+          "mnemonic": "Acclaim sounds like 'a claim' to fame with praise.",
           "pronunciation": "uh-klaym",
           "usage": "Usage example for 'acclaim' is not defined."
-      },
-      {
+        },
+        {
           "id": 44,
           "term": "acclimate",
           "picture": "",
           "meaning": "To adapt to a new environment or situation.",
-          "mnemonic": "",
+          "mnemonic": "Acclimate sounds like 'climate,' adjusting to weather or conditions.",
           "pronunciation": "ak-luh-mayt",
           "usage": "Usage example for 'acclimate' is not defined."
-      },
-      {
+        },
+        {
           "id": 45,
           "term": "acclivity",
           "picture": "",
           "meaning": "An upward slope.",
-          "mnemonic": "",
+          "mnemonic": "Think of climbing a hill (clivity = slope).",
           "pronunciation": "ak-kliv-ih-tee",
           "usage": "Usage example for 'acclivity' is not defined."
-      },
-      {
+        },
+        {
           "id": 46,
           "term": "accolade",
           "picture": "",
           "meaning": "An award or honor.",
-          "mnemonic": "",
+          "mnemonic": "Accolade sounds like 'a cool aid,' as a reward for effort.",
           "pronunciation": "ak-uh-layd",
           "usage": "Usage example for 'accolade' is not defined."
-      },
-      {
+        },
+        {
           "id": 47,
           "term": "accomplice",
           "picture": "",
           "meaning": "A person who helps another commit a crime.",
-          "mnemonic": "",
+          "mnemonic": "Accomplice sounds like 'a company in mischief.'",
           "pronunciation": "uh-kom-plis",
           "usage": "Usage example for 'accomplice' is not defined."
-      },
-      {
+        },
+        {
           "id": 48,
           "term": "accord",
           "picture": "",
           "meaning": "Agreement or harmony.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'a chord' in music, which harmonizes.",
           "pronunciation": "uh-kord",
           "usage": "Usage example for 'accord' is not defined."
-      },
-      {
+        },
+        {
           "id": 49,
           "term": "accost",
           "picture": "",
           "meaning": "To approach and address someone boldly or aggressively.",
-          "mnemonic": "",
+          "mnemonic": "Accost sounds like 'a cost,' as in a demanding encounter.",
           "pronunciation": "uh-kawst",
           "usage": "Usage example for 'accost' is not defined."
-      },
-      {
+        },
+        {
           "id": 50,
           "term": "accoutre",
           "picture": "",
           "meaning": "To outfit or equip, especially with military gear.",
-          "mnemonic": "",
+          "mnemonic": "Accoutre sounds like 'a couture,' clothing or equipment.",
           "pronunciation": "uh-koot-er",
           "usage": "Usage example for 'accoutre' is not defined."
-      },
-      {
+        },
+        {
           "id": 51,
           "term": "accretion",
           "picture": "",
           "meaning": "A gradual growth or accumulation.",
-          "mnemonic": "",
+          "mnemonic": "Accretion sounds like 'addition,' growing gradually.",
           "pronunciation": "uh-kree-shun",
           "usage": "Usage example for 'accretion' is not defined."
-      },
-      {
+        },
+        {
           "id": 52,
           "term": "accrue",
           "picture": "",
           "meaning": "To accumulate or receive over time.",
-          "mnemonic": "",
+          "mnemonic": "Accrue sounds like 'a crew,' gathering or building over time.",
           "pronunciation": "uh-kroo",
           "usage": "Usage example for 'accrue' is not defined."
-      },
-      {
+        },
+        {
           "id": 53,
           "term": "acerbity",
           "picture": "",
           "meaning": "Bitterness or sharpness of tone, temper, or manner.",
-          "mnemonic": "",
+          "mnemonic": "Acerbity sounds like 'acid,' which is sharp and bitter.",
           "pronunciation": "uh-sur-bi-tee",
           "usage": "Usage example for 'acerbity' is not defined."
-      },
-      {
+        },
+        {
           "id": 54,
           "term": "acetic",
           "picture": "",
           "meaning": "Relating to or producing vinegar or acetic acid.",
-          "mnemonic": "",
+          "mnemonic": "Acetic sounds like 'acidic,' like the taste of vinegar.",
           "pronunciation": "uh-see-tik",
           "usage": "Usage example for 'acetic' is not defined."
-      },
-      {
+        },
+        {
           "id": 55,
           "term": "acidulous",
           "picture": "",
           "meaning": "Slightly sour in taste or manner.",
-          "mnemonic": "",
+          "mnemonic": "Acidulous sounds like 'acid,' which is sour.",
           "pronunciation": "uh-sid-yuh-luhs",
           "usage": "Usage example for 'acidulous' is not defined."
-      },
-      {
+        },
+        {
           "id": 56,
           "term": "acknowledge",
           "picture": "",
           "meaning": "To accept or admit the truth of something.",
-          "mnemonic": "",
+          "mnemonic": "Acknowledge is like 'know,' to admit knowing something.",
           "pronunciation": "ak-nol-ij",
           "usage": "Usage example for 'acknowledge' is not defined."
-      },
-      {
+        },
+        {
           "id": 57,
           "term": "acme",
           "picture": "",
           "meaning": "The highest point or peak.",
-          "mnemonic": "",
+          "mnemonic": "Acme sounds like 'aim,' as in reaching the peak.",
           "pronunciation": "ak-mee",
           "usage": "Usage example for 'acme' is not defined."
-      },
-      {
+        },
+        {
           "id": 58,
           "term": "acne",
           "picture": "",
           "meaning": "A skin condition characterized by red pimples.",
-          "mnemonic": "",
+          "mnemonic": "Think of acne as 'annoying spots' on the skin.",
           "pronunciation": "ak-nee",
           "usage": "Usage example for 'acne' is not defined."
-      },
-      {
+        },
+        {
           "id": 59,
           "term": "acoustics",
           "picture": "",
           "meaning": "The quality of sound in a room or space.",
-          "mnemonic": "",
+          "mnemonic": "Acoustics sounds like 'a sound sticks,' referring to how sound travels.",
           "pronunciation": "uh-koos-tiks",
           "usage": "Usage example for 'acoustics' is not defined."
-      },
-      {
+        },
+        {
           "id": 60,
           "term": "acquiesce",
           "picture": "",
           "meaning": "To accept reluctantly but without protest.",
-          "mnemonic": "",
+          "mnemonic": "Acquiesce sounds like 'agree quietly,' accepting silently.",
           "pronunciation": "ak-wee-es",
           "usage": "Usage example for 'acquiesce' is not defined."
-      },
-      {
+        },
+        {
           "id": 61,
           "term": "acquittal",
           "picture": "",
           "meaning": "A judgment of not guilty in a court of law.",
-          "mnemonic": "",
+          "mnemonic": "Acquittal sounds like 'quit all' charges.",
           "pronunciation": "uh-kwit-uhl",
           "usage": "Usage example for 'acquittal' is not defined."
-      },
-      {
+        },
+        {
           "id": 62,
           "term": "acrid",
           "picture": "",
           "meaning": "Having a strong, unpleasant smell or taste.",
-          "mnemonic": "",
+          "mnemonic": "Acrid sounds like 'acid,' which has a sharp, bitter smell.",
           "pronunciation": "ak-rid",
           "usage": "Usage example for 'acrid' is not defined."
-      },
-      {
+        },
+        {
           "id": 63,
           "term": "acrimonious",
           "picture": "",
           "meaning": "Bitter or harsh in tone or manner.",
-          "mnemonic": "",
+          "mnemonic": "Acrimonious sounds like 'acrimony,' meaning bitterness.",
           "pronunciation": "ak-ree-moh-nee-uhs",
           "usage": "Usage example for 'acrimonious' is not defined."
-      },
-      {
+        },
+        {
           "id": 64,
           "term": "acrophobia",
           "picture": "",
           "meaning": "An extreme fear of heights.",
-          "mnemonic": "",
+          "mnemonic": "Acrophobia is 'acro' (high) + 'phobia' (fear).",
           "pronunciation": "ak-roh-foh-bee-uh",
           "usage": "Usage example for 'acrophobia' is not defined."
-      },
-      {
+        },
+        {
           "id": 65,
           "term": "actuarial",
           "picture": "",
           "meaning": "Relating to calculating risks, especially for insurance.",
-          "mnemonic": "",
+          "mnemonic": "Think of actuaries calculating risks and premiums.",
           "pronunciation": "ak-choo-er-ee-uhl",
           "usage": "Usage example for 'actuarial' is not defined."
-      },
-      {
+        },
+        {
           "id": 66,
           "term": "actuary",
           "picture": "",
           "meaning": "A professional who calculates insurance risks.",
-          "mnemonic": "",
+          "mnemonic": "Actuary is the 'actor' of insurance calculations.",
           "pronunciation": "ak-choo-er-ee",
           "usage": "Usage example for 'actuary' is not defined."
-      },
-      {
+        },
+        {
           "id": 67,
           "term": "actuate",
           "picture": "",
           "meaning": "To cause something to start or operate.",
-          "mnemonic": "",
+          "mnemonic": "Actuate sounds like 'activate,' to start something.",
           "pronunciation": "ak-choo-ate",
           "usage": "Usage example for 'actuate' is not defined."
-      },
-      {
+        },
+        {
           "id": 68,
           "term": "acuity",
           "picture": "",
           "meaning": "Sharpness or keenness of thought, vision, or hearing.",
-          "mnemonic": "",
+          "mnemonic": "Acuity sounds like 'acute,' meaning sharp and precise.",
           "pronunciation": "uh-kyooh-ih-tee",
           "usage": "Usage example for 'acuity' is not defined."
-      },
-      {
+        },
+        {
           "id": 69,
           "term": "acumen",
           "picture": "",
           "meaning": "The ability to make good judgments and quick decisions.",
-          "mnemonic": "",
+          "mnemonic": "Acumen sounds like 'accurate men,' skilled in decision-making.",
           "pronunciation": "ak-yoo-men",
           "usage": "Usage example for 'acumen' is not defined."
-      },
-      {
+        },
+        {
           "id": 70,
           "term": "acute",
           "picture": "",
           "meaning": "Sharp, severe, or intense.",
-          "mnemonic": "",
+          "mnemonic": "Acute sounds like 'a cute angle,' which is sharp.",
           "pronunciation": "uh-kyoot",
           "usage": "Usage example for 'acute' is not defined."
-      },
-      {
+        },
+        {
           "id": 71,
           "term": "adage",
           "picture": "",
           "meaning": "A short statement expressing a general truth.",
-          "mnemonic": "",
+          "mnemonic": "Adage sounds like 'add age,' gaining wisdom over time.",
           "pronunciation": "ad-ij",
           "usage": "Usage example for 'adage' is not defined."
-      },
-      {
+        },
+        {
           "id": 72,
           "term": "adamant",
           "picture": "",
           "meaning": "Refusing to be persuaded; firm in opinion.",
-          "mnemonic": "",
+          "mnemonic": "Adamant sounds like 'a diamond,' which is unyielding.",
           "pronunciation": "ad-uh-muhnt",
           "usage": "Usage example for 'adamant' is not defined."
-      },
-      {
+        },
+        {
           "id": 73,
           "term": "adapt",
           "picture": "",
           "meaning": "To adjust to new conditions or requirements.",
-          "mnemonic": "",
+          "mnemonic": "Adapt sounds like 'add apt,' to make suitable.",
           "pronunciation": "uh-dapt",
           "usage": "Usage example for 'adapt' is not defined."
-      },
-      {
+        },
+        {
           "id": 74,
           "term": "addendum",
           "picture": "",
           "meaning": "An addition or supplement to a document.",
-          "mnemonic": "",
+          "mnemonic": "Addendum sounds like 'add them,' adding extra parts.",
           "pronunciation": "uh-den-duhm",
           "usage": "Usage example for 'addendum' is not defined."
-      },
-      {
+        },
+        {
           "id": 75,
           "term": "addiction",
           "picture": "",
           "meaning": "A compulsive need for something, often harmful.",
-          "mnemonic": "",
+          "mnemonic": "Addiction is 'added action,' repeated obsessively.",
           "pronunciation": "uh-dik-shun",
           "usage": "Usage example for 'addiction' is not defined."
-      },
-      {
+        },
+        {
           "id": 76,
           "term": "addle",
           "picture": "",
           "meaning": "To confuse or make unclear.",
-          "mnemonic": "",
+          "mnemonic": "Addle sounds like 'addle brain,' referring to confusion.",
           "pronunciation": "ad-uhl",
           "usage": "Usage example for 'addle' is not defined."
-      },
-      {
+        },
+        {
           "id": 77,
           "term": "address",
           "picture": "",
           "meaning": "To speak to or deal with a situation.",
-          "mnemonic": "",
+          "mnemonic": "Think of addressing an audience or a problem.",
           "pronunciation": "uh-dres",
           "usage": "Usage example for 'address' is not defined."
-      },
-      {
+        },
+        {
           "id": 78,
           "term": "adept",
           "picture": "",
           "meaning": "Highly skilled or proficient.",
-          "mnemonic": "",
+          "mnemonic": "Adept sounds like 'adapt,' showing skill in doing so.",
           "pronunciation": "uh-dept",
           "usage": "Usage example for 'adept' is not defined."
-      },
-      {
+        },
+        {
           "id": 79,
           "term": "adhere",
           "picture": "",
           "meaning": "To stick to something firmly.",
-          "mnemonic": "",
+          "mnemonic": "Adhere sounds like 'adhesive,' which sticks firmly.",
           "pronunciation": "ad-heer",
           "usage": "Usage example for 'adhere' is not defined."
-      },
-      {
+        },
+        {
           "id": 80,
           "term": "adherent",
           "picture": "",
           "meaning": "A supporter or follower of a person or idea.",
-          "mnemonic": "",
+          "mnemonic": "Adherent adheres to an idea or belief.",
           "pronunciation": "ad-heer-uhnt",
           "usage": "Usage example for 'adherent' is not defined."
-      },
-      {
+        },
+        {
           "id": 81,
           "term": "adjacent",
           "picture": "",
           "meaning": "Next to or adjoining something else.",
-          "mnemonic": "",
+          "mnemonic": "Think of 'adjoining' space next to something.",
           "pronunciation": "uh-jay-suhnt",
           "usage": "Usage example for 'adjacent' is not defined."
-      },
-      {
+        },
+        {
           "id": 82,
           "term": "adjoin",
           "picture": "",
           "meaning": "To be next to or joined with.",
-          "mnemonic": "",
+          "mnemonic": "Adjoin sounds like 'a joint,' connecting two things.",
           "pronunciation": "uh-join",
           "usage": "Usage example for 'adjoin' is not defined."
-      },
-      {
+        },
+        {
           "id": 83,
           "term": "adjourn",
           "picture": "",
           "meaning": "To suspend proceedings to another time or place.",
-          "mnemonic": "",
+          "mnemonic": "Adjourn sounds like 'a journey,' as you postpone to another time.",
           "pronunciation": "uh-jurn",
           "usage": "Usage example for 'adjourn' is not defined."
-      },
-      {
+        },
+        {
           "id": 84,
           "term": "adjunct",
           "picture": "",
           "meaning": "Something added but not essential.",
-          "mnemonic": "",
+          "mnemonic": "Adjunct sounds like 'add junk,' an addition not essential.",
           "pronunciation": "ad-juhngkt",
           "usage": "Usage example for 'adjunct' is not defined."
-      },
-      {
+        },
+        {
           "id": 85,
           "term": "adjuration",
           "picture": "",
           "meaning": "A solemn urging or earnest request.",
-          "mnemonic": "",
+          "mnemonic": "Adjuration sounds like 'jury,' pleading earnestly in court.",
           "pronunciation": "ad-juh-ray-shun",
           "usage": "Usage example for 'adjuration' is not defined."
-      },
-      {
+        },
+        {
           "id": 86,
           "term": "adjutant",
           "picture": "",
           "meaning": "A military officer assisting a senior officer.",
-          "mnemonic": "",
+          "mnemonic": "Adjutant assists in adjusting orders.",
           "pronunciation": "ad-joo-tuhnt",
           "usage": "Usage example for 'adjutant' is not defined."
-      },
-      {
+        },
+        {
           "id": 87,
           "term": "admonish",
           "picture": "",
           "meaning": "To warn or reprimand someone firmly.",
-          "mnemonic": "",
+          "mnemonic": "Admonish sounds like 'add more punish,' a warning before punishment.",
           "pronunciation": "ad-muh-nish",
           "usage": "Usage example for 'admonish' is not defined."
-      },
-      {
+        },
+        {
           "id": 88,
           "term": "adore",
           "picture": "",
           "meaning": "To love and respect deeply.",
-          "mnemonic": "",
+          "mnemonic": "Adore sounds like 'a door,' opening your heart with love.",
           "pronunciation": "uh-dore",
           "usage": "Usage example for 'adore' is not defined."
-      },
-      {
+        },
+        {
           "id": 89,
           "term": "adorn",
           "picture": "",
           "meaning": "To decorate or add beauty to something.",
-          "mnemonic": "",
+          "mnemonic": "Adorn sounds like 'a decoration,' adding beauty.",
           "pronunciation": "uh-dorn",
           "usage": "Usage example for 'adorn' is not defined."
-      },
-      {
+        },
+        {
           "id": 90,
           "term": "adroit",
           "picture": "",
           "meaning": "Skillful and clever in handling situations.",
-          "mnemonic": "",
+          "mnemonic": "Adroit sounds like 'a droid,' which is skillful at tasks.",
           "pronunciation": "uh-droit",
           "usage": "Usage example for 'adroit' is not defined."
-      },
-      {
+        },
+        {
           "id": 91,
           "term": "adulation",
           "picture": "",
           "meaning": "Excessive admiration or praise.",
-          "mnemonic": "",
+          "mnemonic": "Adulation sounds like 'adore-lation,' extreme admiration.",
           "pronunciation": "aj-uh-lay-shun",
           "usage": "Usage example for 'adulation' is not defined."
-      },
-      {
+        },
+        {
           "id": 92,
           "term": "adulterate",
           "picture": "",
           "meaning": "To make something impure by adding inferior substances.",
-          "mnemonic": "",
+          "mnemonic": "Adulterate sounds like 'adult rate,' degrading purity.",
           "pronunciation": "uh-duhl-tuh-rayt",
           "usage": "Usage example for 'adulterate' is not defined."
-      },
-      {
+        },
+        {
           "id": 93,
           "term": "Advent",
           "picture": "",
           "meaning": "The arrival of a significant event or person.",
-          "mnemonic": "",
+          "mnemonic": "Advent sounds like 'adventure,' marking a new beginning.",
           "pronunciation": "ad-vent",
           "usage": "Usage example for 'Advent' is not defined."
-      },
-      {
+        },
+        {
           "id": 94,
           "term": "adventitious",
           "picture": "",
           "meaning": "Happening by chance or accident.",
-          "mnemonic": "",
+          "mnemonic": "Adventitious sounds like 'adventure,' occurring by chance.",
           "pronunciation": "ad-ven-tish-uhs",
           "usage": "Usage example for 'adventitious' is not defined."
-      },
-      {
+        },
+        {
           "id": 95,
           "term": "adversary",
           "picture": "",
           "meaning": "An opponent or enemy.",
-          "mnemonic": "",
+          "mnemonic": "Adversary sounds like 'adverse,' opposing forces.",
           "pronunciation": "ad-ver-ser-ee",
           "usage": "Usage example for 'adversary' is not defined."
-      },
-      {
+        },
+        {
           "id": 96,
           "term": "adverse",
           "picture": "",
           "meaning": "Harmful or unfavorable.",
-          "mnemonic": "",
+          "mnemonic": "Adverse sounds like 'a verse,' a twist in a negative way.",
           "pronunciation": "ad-vers",
           "usage": "Usage example for 'adverse' is not defined."
-      },
-      {
+        },
+        {
           "id": 97,
           "term": "adversity",
           "picture": "",
           "meaning": "A difficult or unfavorable situation.",
-          "mnemonic": "",
+          "mnemonic": "Adversity sounds like 'adverse city,' facing challenges.",
           "pronunciation": "ad-ver-si-tee",
           "usage": "Usage example for 'adversity' is not defined."
-      },
-      {
+        },
+        {
           "id": 98,
           "term": "advert",
           "picture": "",
           "meaning": "To refer to or call attention to something.",
-          "mnemonic": "",
+          "mnemonic": "Advert sounds like 'advertisement,' bringing attention.",
           "pronunciation": "ad-vert",
           "usage": "Usage example for 'advert' is not defined."
-      },
-      {
+        },
+        {
           "id": 99,
           "term": "advocacy",
           "picture": "",
           "meaning": "Public support for a cause or policy.",
-          "mnemonic": "",
+          "mnemonic": "Advocacy sounds like 'add voice,' supporting publicly.",
           "pronunciation": "ad-vuh-kuh-see",
           "usage": "Usage example for 'advocacy' is not defined."
-      },
-      {
+        },
+        {
           "id": 100,
           "term": "advocate",
           "picture": "",
           "meaning": "To support or argue for a cause.",
-          "mnemonic": "",
+          "mnemonic": "Advocate sounds like 'add a case,' supporting something.",
           "pronunciation": "ad-vuh-kate",
           "usage": "Usage example for 'advocate' is not defined."
-      },
-      {
+        },
+        {
           "id": 101,
           "term": "aegis",
           "picture": "",
           "meaning": "Protection or support.",
-          "mnemonic": "",
+          "mnemonic": "Aegis sounds like 'a shield,' symbolizing protection.",
           "pronunciation": "ee-jis",
           "usage": "Usage example for 'aegis' is not defined."
-      },
-      {
+        },
+        {
           "id": 102,
           "term": "aesthetic",
           "picture": "",
           "meaning": "Concerned with beauty or the appreciation of beauty.",
-          "mnemonic": "",
+          "mnemonic": "Aesthetic sounds like 'artistic,' relating to beauty.",
           "pronunciation": "es-thet-ik",
           "usage": "Usage example for 'aesthetic' is not defined."
-      },
-      {
+        },
+        {
           "id": 103,
           "term": "affable",
           "picture": "",
           "meaning": "Friendly and easy to talk to.",
-          "mnemonic": "",
+          "mnemonic": "Affable sounds like 'laughable,' making you comfortable.",
           "pronunciation": "af-uh-bul",
           "usage": "Usage example for 'affable' is not defined."
-      },
-      {
+        },
+        {
           "id": 104,
           "term": "affected",
           "picture": "",
           "meaning": "Artificial or pretentious.",
-          "mnemonic": "",
+          "mnemonic": "Affected sounds like 'fake it,' pretending something.",
           "pronunciation": "uh-fek-tid",
           "usage": "Usage example for 'affected' is not defined."
-      },
-      {
+        },
+        {
           "id": 105,
           "term": "affidavit",
           "picture": "",
           "meaning": "A written statement sworn to be true.",
-          "mnemonic": "",
+          "mnemonic": "Affidavit sounds like 'affirm it,' confirming legally.",
           "pronunciation": "af-ih-day-vit",
           "usage": "Usage example for 'affidavit' is not defined."
-      },
-      {
+        },
+        {
           "id": 106,
           "term": "affiliation",
           "picture": "",
           "meaning": "A close connection or association.",
-          "mnemonic": "",
+          "mnemonic": "Affiliation sounds like 'a family relation,' a connection.",
           "pronunciation": "uh-fil-ee-ay-shun",
           "usage": "Usage example for 'affiliation' is not defined."
-      },
-      {
+        },
+        {
           "id": 107,
           "term": "affinity",
           "picture": "",
           "meaning": "A natural liking or attraction.",
-          "mnemonic": "",
+          "mnemonic": "Affinity sounds like 'infinity,' endless attraction.",
           "pronunciation": "uh-fin-ih-tee",
           "usage": "Usage example for 'affinity' is not defined."
-      },
-      {
+        },
+        {
           "id": 108,
           "term": "affirmation",
           "picture": "",
           "meaning": "Positive assertion or confirmation.",
-          "mnemonic": "",
+          "mnemonic": "Affirmation sounds like 'affirm,' confirming positively.",
           "pronunciation": "af-er-may-shun",
           "usage": "Usage example for 'affirmation' is not defined."
-      },
-      {
+        },
+        {
           "id": 109,
           "term": "affliction",
           "picture": "",
           "meaning": "A state of pain or distress.",
-          "mnemonic": "",
+          "mnemonic": "Affliction sounds like 'affect pain,' causing distress.",
           "pronunciation": "uh-flik-shun",
           "usage": "Usage example for 'affliction' is not defined."
-      },
-      {
+        },
+        {
           "id": 110,
           "term": "affluence",
           "picture": "",
           "meaning": "Abundance of wealth or resources.",
-          "mnemonic": "",
+          "mnemonic": "Affluence sounds like 'flow of money,' representing wealth.",
           "pronunciation": "af-loo-ens",
           "usage": "Usage example for 'affluence' is not defined."
-      },
-      {
+        },
+        {
           "id": 111,
           "term": "affront",
           "picture": "",
           "meaning": "An open insult or offense.",
-          "mnemonic": "",
+          "mnemonic": "Affront sounds like 'a front,' offending someone openly.",
           "pronunciation": "uh-fruhnt",
           "usage": "Usage example for 'affront' is not defined."
-      },
-      {
+        },
+        {
           "id": 112,
           "term": "afterlife",
           "picture": "",
           "meaning": "Life after death.",
-          "mnemonic": "",
+          "mnemonic": "Afterlife is life 'after' death.",
           "pronunciation": "af-ter-life",
           "usage": "Usage example for 'afterlife' is not defined."
-      },
-      {
+        },
+        {
           "id": 113,
           "term": "agape",
           "picture": "",
           "meaning": "Wide open in wonder or amazement.",
-          "mnemonic": "",
+          "mnemonic": "Agape sounds like 'a gape,' mouth open in wonder.",
           "pronunciation": "uh-gay-pee",
           "usage": "Usage example for 'agape' is not defined."
-      },
-      {
+        },
+        {
           "id": 114,
           "term": "agenda",
           "picture": "",
           "meaning": "A list of items to be discussed or done.",
-          "mnemonic": "",
+          "mnemonic": "Agenda sounds like 'a schedule,' a plan of action.",
           "pronunciation": "uh-jen-duh",
           "usage": "Usage example for 'agenda' is not defined."
-      },
-      {
+        },
+        {
           "id": 115,
           "term": "agglomeration",
           "picture": "",
           "meaning": "A collection or mass of things.",
-          "mnemonic": "",
+          "mnemonic": "Agglomeration sounds like 'a globe,' collecting things together.",
           "pronunciation": "uh-glom-uh-ray-shun",
           "usage": "Usage example for 'agglomeration' is not defined."
-      },
-      {
+        },
+        {
           "id": 116,
           "term": "aggrandize",
           "picture": "",
           "meaning": "To increase in power, wealth, or importance.",
-          "mnemonic": "",
+          "mnemonic": "Aggrandize sounds like 'grand size,' making bigger.",
           "pronunciation": "uh-grand-ize",
           "usage": "Usage example for 'aggrandize' is not defined."
-      },
-      {
+        },
+        {
           "id": 117,
           "term": "aggregate",
           "picture": "",
           "meaning": "To collect or combine into a whole.",
-          "mnemonic": "",
+          "mnemonic": "Aggregate sounds like 'a great gate,' collecting everything.",
           "pronunciation": "ag-ree-git",
           "usage": "Usage example for 'aggregate' is not defined."
-      },
-      {
+        },
+        {
           "id": 118,
           "term": "aghast",
           "picture": "",
           "meaning": "Filled with shock or horror.",
-          "mnemonic": "",
+          "mnemonic": "Aghast sounds like 'a ghost,' leaving you in shock.",
           "pronunciation": "uh-gast",
           "usage": "Usage example for 'aghast' is not defined."
-      },
-      {
+        },
+        {
           "id": 119,
           "term": "agility",
           "picture": "",
           "meaning": "The ability to move quickly and easily.",
-          "mnemonic": "",
+          "mnemonic": "Agility sounds like 'ability,' for quick and smooth movement.",
           "pronunciation": "uh-jil-i-tee",
           "usage": "Usage example for 'agility' is not defined."
-      },
-      {
+        },
+        {
           "id": 120,
           "term": "agitate",
           "picture": "",
           "meaning": "To stir up or disturb.",
-          "mnemonic": "",
+          "mnemonic": "Agitate sounds like 'aggressive state,' causing disturbance.",
           "pronunciation": "aj-ih-tayt",
           "usage": "Usage example for 'agitate' is not defined."
-      },
+        },
         {
           "id": 121,
           "term": "agnostic",
