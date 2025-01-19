@@ -20,4 +20,8 @@
     <button (click)="nextPage()" [disabled]="currentPage >= maxPages - 1">Next</button>
     <button (click)="lastPage()" [disabled]="currentPage >= maxPages - 1">Last</button>
   </div>
+  <app-register-modal 
+    *ngIf="showRegisterModal"
+    (close)="closeRegisterModal()">
+  </app-register-modal>
 </div>

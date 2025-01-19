@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FlashcardComponent } from '../../flashcard/flashcard.component';
 import { WordsService } from '../../words.service';
+import { AuthService } from '../../services/auth.service';
+import { RegisterModalComponent } from '../../components/register-modal/register-modal.component';
 import { Word } from '../../word.interface';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FlashcardComponent, FormsModule],
+  imports: [CommonModule, FlashcardComponent, FormsModule, RegisterModalComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -19,10 +21,23 @@ export class HomeComponent implements OnInit {
   searchTerm = '';
   private words: Word[] = [];
   private filteredWords: Word[] = [];
+  showRegisterModal = false;
+  wordsViewed = 0;
+  isRegistered = false;
+  remainingFreeWords = 10;
 
-  constructor(private wordsService: WordsService) {}
+  constructor(
+    private wordsService: WordsService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
+    this.authService.currentUser$.subscribe(user => {
+      this.isRegistered = !!user;
+      this.wordsViewed = user?.wordsViewed || 0;
+      this.remainingFreeWords = Math.max(0, 10 - this.wordsViewed);
+    });
+
     this.wordsService.getWords().subscribe(words => {
       this.words = words;
       this.filteredWords = words;
@@ -54,8 +69,20 @@ export class HomeComponent implements OnInit {
 
   nextPage() {
     if (this.currentPage < this.maxPages - 1) {
+      if (!this.isRegistered && this.wordsViewed >= 10) {
+        this.showRegisterModal = true;
+        return;
+      }
+      
       this.currentPage++;
       this.updateCurrentWord();
+      this.wordsViewed++;
+      
+      if (this.isRegistered) {
+        this.currentPage++;
+      this.updateCurrentWord();
+      this.wordsViewed++;
+      }
     }
   }
 
@@ -71,5 +98,9 @@ export class HomeComponent implements OnInit {
   lastPage() {
     this.currentPage = this.maxPages - 1;
     this.updateCurrentWord();
+  }
+
+  closeRegisterModal() {
+    this.showRegisterModal = false;
   }
 }

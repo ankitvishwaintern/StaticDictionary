@@ -76,3 +76,10 @@ button:hover:not(:disabled) {
   background-color: #5648C0;
   transform: translateY(-2px);
 }
+
+.words-remaining {
+  text-align: center;
+  color: #6B5ED9;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}

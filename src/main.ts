@@ -6,18 +6,23 @@ import { HomeComponent } from './app/pages/home/home.component';
 import { AboutComponent } from './app/pages/about/about.component';
 import { ContactComponent } from './app/pages/contact/contact.component';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { LoginComponent } from './app/pages/login/login.component';
+import { RegisterModalComponent } from './app/components/register-modal/register-modal.component';
+import { LogoutComponent } from './app/components/logout/logout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: '**', redirectTo: '' }
 ];
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, RegisterModalComponent],
   template: `
     <div class="app-container">
       <header>
@@ -28,12 +33,24 @@ const routes: Routes = [
         <nav>
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
           <a routerLink="/about" routerLinkActive="active">About Us</a>
-          <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+          <a routerLink="/contact" routerLinkActive="active">Contact Us</a>          
+          <div class="auth-links">
+            <a href="#" (click)="showRegisterModal($event)">Register</a>
+            <a routerLink="/login" routerLinkActive="active">Login</a>
+            <a routerLink="/logout" class="logout-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </a>
+          </div>
         </nav>
       </header>
       <main>
         <router-outlet></router-outlet>
       </main>
+      <app-register-modal *ngIf="isRegisterModalVisible" (close)="hideRegisterModal()"></app-register-modal>
     </div>
   `,
   styles: [`
@@ -77,6 +94,11 @@ nav {
   display: flex;
   gap: 1.5rem;
   padding: 0.25rem 0;
+  flex-grow: 1;
+}
+
+nav a:last-child {
+  margin-left: auto;
 }
 
 nav a {
@@ -103,10 +125,46 @@ main {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 0.75rem;
-}`]
+}
+
+.auth-links {
+  margin-left: auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav a:last-child {
+  margin-left: 0;
+}
+
+.logout-link {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.logout-link svg {
+  color: #666;
+  transition: color 0.3s;
+}
+
+.logout-link:hover svg {
+  color: #4CAF50;
+}
+  `]
 })
 export class App {
-  constructor() {}
+  isRegisterModalVisible = false;
+
+  showRegisterModal(event: Event) {
+    event.preventDefault();
+    this.isRegisterModalVisible = true;
+  }
+
+  hideRegisterModal() {
+    this.isRegisterModalVisible = false;
+  }
 }
 
 bootstrapApplication(App, {
