@@ -27,16 +27,25 @@ import { Router } from '@angular/router';
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80vh;
+      min-height: 80vh;
+      padding: 1rem;
     }
+    
     .login-card {
       background: white;
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       width: 100%;
       max-width: 400px;
     }
+
+    @media (min-width: 768px) {
+      .login-card {
+        padding: 2rem;
+      }
+    }
+    
     form {
       display: flex;
       flex-direction: column;

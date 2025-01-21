@@ -18,6 +18,9 @@ export class AuthService {
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  //******************************************* */
+  //create below for production enviornment
+  //******************************************* */
   firebaseConfig = {
     apiKey: "AIzaSyA9Yq2UCZTGzmhGV4Uv9CNXuS7rL_yR7ks",
     authDomain: "picturedictionary-a2149.firebaseapp.com",
