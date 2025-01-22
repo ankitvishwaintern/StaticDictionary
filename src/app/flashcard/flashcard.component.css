@@ -106,3 +106,17 @@
   margin: 0.5rem 0;
   line-height: 1.5;
 }
+
+.details-link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}

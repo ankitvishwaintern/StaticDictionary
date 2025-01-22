@@ -12,6 +12,7 @@
         </div>
         <p class="phonetic">/{{word.pronunciation.toLowerCase()}}/</p>
         <p class="meaning">{{word.meaning}}</p>
+        <a class="details-link" (click)="flip(); $event.stopPropagation()">Details ➜</a>
       </div>
     </div>
     <div class="flashcard-back">

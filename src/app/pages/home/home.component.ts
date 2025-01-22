@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FlashcardComponent } from '../../flashcard/flashcard.component';
@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   wordsViewed = 0;
   isRegistered = false;
   remainingFreeWords = 10;
+  @ViewChild(FlashcardComponent) flashcard!: FlashcardComponent;
 
   constructor(
     private wordsService: WordsService,
@@ -64,6 +65,7 @@ export class HomeComponent implements OnInit {
     if (this.currentPage > 0) {
       this.currentPage--;
       this.updateCurrentWord();
+      this.resetFlipState();
     }
   }
 
@@ -77,11 +79,12 @@ export class HomeComponent implements OnInit {
       this.currentPage++;
       this.updateCurrentWord();
       this.wordsViewed++;
+      this.resetFlipState();
       
       if (this.isRegistered) {
         this.currentPage++;
-      this.updateCurrentWord();
-      this.wordsViewed++;
+        this.updateCurrentWord();
+        this.wordsViewed++;
       }
     }
   }
@@ -93,14 +96,22 @@ export class HomeComponent implements OnInit {
   firstPage() {
     this.currentPage = 0;
     this.updateCurrentWord();
+    this.resetFlipState();
   }
 
   lastPage() {
     this.currentPage = this.maxPages - 1;
     this.updateCurrentWord();
+    this.resetFlipState();
   }
 
   closeRegisterModal() {
     this.showRegisterModal = false;
+  }
+
+  private resetFlipState() {
+    if (this.flashcard) {
+      this.flashcard.isFlipped = false;
+    }
   }
 }
