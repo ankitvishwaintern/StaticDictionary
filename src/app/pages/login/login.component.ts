@@ -19,6 +19,11 @@ import { Router } from '@angular/router';
             {{ isLoading ? 'Logging in...' : 'Login' }}
           </button>
         </form>
+        
+        <div class="links-container">
+          <a href="#" class="forgot-password" (click)="onForgotPassword($event)">Forgot Password?</a>
+          <a href="#" class="change-password" (click)="onChangePassword($event)">Change Password</a>
+        </div>
       </div>
     </div>
   `,
@@ -67,6 +72,27 @@ import { Router } from '@angular/router';
     button:hover {
       background: #5648C0;
     }
+
+    .links-container {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .forgot-password,
+    .change-password {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .forgot-password:hover,
+    .change-password:hover {
+      color: #4CAF50;
+      text-decoration: underline;
+    }
   `]
 })
 export class LoginComponent {
@@ -88,5 +114,15 @@ export class LoginComponent {
         this.isLoading = false;
       }
     }
+  }
+
+  onForgotPassword(event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/forgot-password']);
+  }
+
+  onChangePassword(event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/change-password']);
   }
 } 
