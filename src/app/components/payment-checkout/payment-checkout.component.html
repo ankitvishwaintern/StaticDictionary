@@ -1,0 +1,13 @@
+<div class="payment-checkout-container">
+  <div class="checkout-card">
+    <h1 class="checkout-title">Checkout</h1>
+    <div class="checkout-details">
+      <p>Product: <strong>{{ product }}</strong></p>
+      <p>Price: <strong>{{ price }}</strong></p>
+      <p>Subscription Type: <strong>{{ isYearly ? 'Yearly' : 'Monthly' }}</strong></p>
+    </div>
+    <button (click)="handleCheckout()" class="primary-button">
+      <i class="fas fa-credit-card"></i> Proceed to Checkout
+    </button>
+  </div>
+</div>

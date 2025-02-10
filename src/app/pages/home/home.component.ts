@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private wordsService: WordsService,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.authService.currentUser$.subscribe(user => {
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
       this.filteredWords = this.words;
     } else {
       const term = this.searchTerm.toLowerCase().trim();
-      this.filteredWords = this.words.filter(word => 
+      this.filteredWords = this.words.filter(word =>
         word.term.toLowerCase().includes(term)
       );
     }
@@ -75,14 +75,17 @@ export class HomeComponent implements OnInit {
         this.showRegisterModal = true;
         return;
       }
-      
-      this.currentPage++;
+      let min = 0;
+      let max = this.filteredWords.length;
+      let random = Math.floor(Math.random() * (max - min + 1)) + min;
+      this.currentPage = random;
+
       this.updateCurrentWord();
       this.wordsViewed++;
       this.resetFlipState();
-      
+
       if (this.isRegistered) {
-        this.currentPage++;
+        this.currentPage = random;
         this.updateCurrentWord();
         this.wordsViewed++;
       }

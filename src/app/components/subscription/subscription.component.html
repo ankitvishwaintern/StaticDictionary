@@ -1,0 +1,26 @@
+<div class="subscription-container">
+  <div class="subscription-card">
+    <h2>{{ product || productName }}</h2>
+    <div class="pricing-toggle">
+      <span [class.active]="!isYearly">Monthly</span>
+      <label class="switch">
+        <input type="checkbox" [(ngModel)]="isYearly">
+        <span class="slider round"></span>
+      </label>
+      <span [class.active]="isYearly">Yearly</span>
+    </div>
+
+    <div class="price-display">
+      <span class="currency">$</span>
+      <span class="amount">{{ currentPrice }}</span>
+      <span class="period">/{{ isYearly ? 'year' : 'month' }}</span>
+    </div>
+
+    <button class="primary-button" (click)="handleCheckout()">
+      Subscribe
+    </button>
+    <button class="primary-button" (click)="Test()">
+      Test
+    </button>
+  </div>
+</div> 

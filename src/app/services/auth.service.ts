@@ -100,11 +100,15 @@ export class AuthService {
         lastLoginDate: new Date()
       };
       this.currentUserSubject.next(user);
-    }
-    } catch (error) {
-      console.log(error);
-      this.currentUserSubject.next(null);
-      //throw error;
+    } 
+  }
+  catch (error) {
+      // Log any errors that occur during login
+      //console.log(error);
+      // Reset the current user to null since login failed
+      //this.currentUserSubject.next(null);
+      // Commented out throwing the error to prevent crashes
+      throw error;
     }
   }
 
@@ -166,5 +170,17 @@ export class AuthService {
       console.error('Error changing password:', error);
       throw error;
     }
+  }
+
+  async getStripeSession(): Promise<any | undefined> {
+    //return await this.http.get<FirebaseConfig>('http://localhost:5225/api/Config/firebase').toPromise();
+    return await this.http.post<any>('http://localhost:5225/api/payments/checkout',null).toPromise();
+
+  }
+
+  async getProductList(): Promise<any | undefined> {
+    //return await this.http.get<FirebaseConfig>('http://localhost:5225/api/Config/firebase').toPromise();
+    return await this.http.get<any>('http://localhost:5225/api/Payments/products').toPromise();
+
   }
 } 

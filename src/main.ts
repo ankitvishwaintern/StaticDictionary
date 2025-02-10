@@ -11,6 +11,12 @@ import { RegisterModalComponent } from './app/components/register-modal/register
 import { LogoutComponent } from './app/components/logout/logout.component';
 import { ForgotPasswordComponent } from './app/pages/forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './app/pages/change-password/change-password.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
+import { SubscriptionComponent } from './app/components/subscription/subscription.component';
+import { PaymentSuccessComponent } from './app/components/PaymentSuccess/payment-success.component';
+import { PaymentCancelComponent } from './app/components/payment-cancel/payment-cancel.component';
+import { PaymentCheckoutComponent } from './app/components/payment-checkout/payment-checkout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +26,10 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'subscription', component: SubscriptionComponent },
+  { path: 'payment-success', component: PaymentSuccessComponent },
+  { path: 'payment-cancel', component: PaymentCancelComponent },
+  { path: 'payment-checkout', component: PaymentCheckoutComponent },
   { path: '**', redirectTo: '' }
 ];
 
@@ -37,27 +47,17 @@ const routes: Routes = [
         <nav>
           <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
           <a routerLink="/about" routerLinkActive="active">About Us</a>
-          <a routerLink="/contact" routerLinkActive="active">Contact Us</a> 
+          <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+          <a routerLink="/subscription" routerLinkActive="active">Subscribe</a>
           <a href="#" (click)="showRegisterModal($event)">Register</a>
-            <a routerLink="/login" routerLinkActive="active">Login</a>
-            <a routerLink="/logout" class="logout-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                <polyline points="16 17 21 12 16 7"></polyline>
-                <line x1="21" y1="12" x2="9" y2="12"></line>
-              </svg>
-            </a>         
-          <!-- <div class="auth-links">
-            <a href="#" (click)="showRegisterModal($event)">Register</a>
-            <a routerLink="/login" routerLinkActive="active">Login</a>
-            <a routerLink="/logout" class="logout-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                <polyline points="16 17 21 12 16 7"></polyline>
-                <line x1="21" y1="12" x2="9" y2="12"></line>
-              </svg>
-            </a>
-          </div> -->
+          <a routerLink="/login" routerLinkActive="active">Login</a>
+          <a routerLink="/logout" class="logout-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </a>
         </nav>
       </header>
       <main>
@@ -231,6 +231,14 @@ export class App {
 bootstrapApplication(App, {
   providers: [
     provideRouter(routes),
-    provideHttpClient()
+    provideHttpClient(),
+    provideAnimations(),
+    provideToastr({
+      timeOut: 3000,
+      positionClass: 'toast-below-button',
+      preventDuplicates: true,
+      closeButton: true,
+      progressBar: true
+    })
   ]
 });

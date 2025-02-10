@@ -1,0 +1,17 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Login</h2>
+    <form (ngSubmit)="login()">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required>
+      <button type="submit" [disabled]="isLoading">
+        {{ isLoading ? 'Logging in...' : 'Login' }}
+      </button>
+    </form>
+    
+    <div class="links-container">
+      <a href="#" class="forgot-password" (click)="onForgotPassword($event)">Forgot Password?</a>
+      <a href="#" class="change-password" (click)="onChangePassword($event)">Change Password</a>
+    </div>
+  </div>
+</div> 

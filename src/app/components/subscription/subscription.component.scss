@@ -1,0 +1,126 @@
+.subscription-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 1rem;
+}
+
+.subscription-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
+
+  h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+
+  span {
+    color: #666;
+    font-size: 0.9rem;
+    
+    &.active {
+      color: #6B5ED9;
+      font-weight: bold;
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: #6B5ED9;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+}
+
+.price-display {
+  margin: 2rem 0;
+  
+  .currency {
+    font-size: 1.5rem;
+    vertical-align: top;
+    color: #333;
+  }
+  
+  .amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #6B5ED9;
+  }
+  
+  .period {
+    color: #666;
+    font-size: 1rem;
+  }
+}
+
+.primary-button {
+  padding: 0.5rem 1rem;
+  background: #6B5ED9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 200px;
+  
+  &:hover {
+    background: #5648C0;
+  }
+} 

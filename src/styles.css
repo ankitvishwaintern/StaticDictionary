@@ -1,0 +1,28 @@
+@import 'ngx-toastr/toastr';
+
+/* Custom position for toast below login button */
+.toast-below-button {
+  position: fixed !important;
+  top: calc(50% + 80px) !important; /* Position below the center where login button is */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.toast-container {
+  position: fixed;
+  z-index: 999999;
+  pointer-events: auto;
+}
+
+.toast-container .ngx-toastr {
+  min-width: 300px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 1 !important;
+}
+
+#toast-container > div {
+  opacity: 1 !important;
+} 
