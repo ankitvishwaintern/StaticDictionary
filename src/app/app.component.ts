@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,12 @@ import { RouterModule } from '@angular/router';
         <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
       </div>
       <div class="auth-links">
-        <a routerLink="/login" routerLinkActive="active">Login</a>
+        <ng-container *ngIf="!isLoggedIn">
+          <a routerLink="/login" routerLinkActive="active">Login</a>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+          <button (click)="logout()" style="background: none; border: none; color: white; cursor: pointer; padding: 0.5rem 1rem; border-radius: 4px; transition: background-color 0.3s;">Logout</button>
+        </ng-container>
       </div>
     </nav>
     <router-outlet></router-outlet>
@@ -46,6 +52,21 @@ import { RouterModule } from '@angular/router';
     }
   `]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'picture-dictionary';
-} 
+  isLoggedIn : boolean = false;
+
+  constructor(private authService : AuthService) {}
+
+  ngOnInit(){
+    console.log('AppComponent : ngOnInit is called');
+    this.authService.isLoggedIn$.subscribe(loggedIn => {
+      console.log('AppComponent : ngOnInit isLoggedIn value from subscription', loggedIn);
+      this.isLoggedIn = loggedIn;
+    });
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+}

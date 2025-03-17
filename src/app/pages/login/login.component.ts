@@ -44,20 +44,25 @@ export class LoginComponent {
         this.isLoading = true;
         this.errorMessage = '';  // Clear previous error before login attempt
         await this.authService.login(this.email, this.password);
+        this.toastr.success('Login Successful!', 'Success'); //Login successful message
         this.router.navigate(['/home']);
       } catch (error: any) {
         if (error.code === 'auth/wrong-password') {
           this.errorMessage = 'Incorrect password.';
+          this.toastr.error('Incorrect email or password', 'Error'); //toastr
         } else if (error.code === 'auth/user-not-found') {
           this.errorMessage = 'No account found with this email.';
+          this.toastr.error('No account found with this email', 'Error'); //toastr
         } else {
           this.errorMessage = 'Login failed. Please try again.';
+          this.toastr.error('Login failed. Please try again', 'Error'); //toastr
         }
       } finally {
         this.isLoading = false;
       }
     } else {
       this.errorMessage = 'Please enter both email and password';
+      this.toastr.warning('Please enter both email and password', 'Warning'); //toastr
     }
   }
 
