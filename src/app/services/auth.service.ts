@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { User } from "../interfaces/user.interface";
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {
@@ -13,6 +12,8 @@ import {
   updatePassword,
   EmailAuthProvider,
   reauthenticateWithCredential,
+  onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import { FirebaseConfig } from "../shared/models/firebase-config.model";
 import { Router } from "@angular/router";
@@ -21,138 +22,170 @@ import { Router } from "@angular/router";
   providedIn: "root",
 })
 export class AuthService {
-  private isLoggedInSubject = new BehaviorSubject<boolean>(false); //initally logged out
-  public isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  public isLoggedIn$: Observable<boolean> =
+    this.isLoggedInSubject.asObservable();
   private currentUserSubject = new BehaviorSubject<User | null>(null);
-  public currentUser$: Observable<any> = this.currentUserSubject.asObservable();
-  private authTokenKey = "authToken"; // Key for local storage
-  firebaseConfig: FirebaseConfig | undefined;
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  public currentUser$: Observable<User | null> =
+    this.currentUserSubject.asObservable();
+  private authTokenKey = "authToken";
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  //******************************************* */
-  //create below for production enviornment
-  //******************************************* */
-  /*
-  firebaseConfig = {
-    apiKey: "AIzaSyA9Yq2UCZTGzmhGV4Uv9CNXuS7rL_yR7ks",
-    authDomain: "picturedictionary-a2149.firebaseapp.com",
-    projectId: "picturedictionary-a2149",
-    storageBucket: "picturedictionary-a2149.firebasestorage.app",
-    messagingSenderId: "249299812094",
-    appId: "1:249299812094:web:96c7906db266f64c88afaf",
-    measurementId: "G-DD99CEG1VQ"
-  };
-*/
-  // Initialize Firebase
+  firebaseConfig: FirebaseConfig | undefined;
+  private app: any;
+  private auth: any;
 
   constructor(private http: HttpClient, private router: Router) {
-    // Check for existing auth token on startup
-    const token = localStorage.getItem(this.authTokenKey);
-    if (token) {
-      this.isLoggedInSubject.next(true);
-    }
+    // Clear any existing auth token initially
+    localStorage.removeItem(this.authTokenKey);
+
+    // Initialize Firebase
+    this.initializeFirebase()
+      .then(() => {
+        // Force signOut initially to clear any lingering auth state
+        signOut(this.auth).then(() => {
+          console.log("Cleared existing auth state");
+          this.isLoggedInSubject.next(false);
+
+          // Now set up the auth state listener
+          onAuthStateChanged(this.auth, (user) => {
+            console.log(
+              "Auth state changed:",
+              user ? "logged in" : "logged out"
+            );
+            if (user) {
+              const userObj = {
+                id: user.uid,
+                email: user.email || "",
+                name: user.displayName || "",
+                wordsViewed: 0,
+                registrationDate: new Date(),
+                lastLoginDate: new Date(),
+              };
+              this.currentUserSubject.next(userObj);
+              this.isLoggedInSubject.next(true);
+            } else {
+              this.currentUserSubject.next(null);
+              this.isLoggedInSubject.next(false);
+              localStorage.removeItem(this.authTokenKey);
+            }
+          });
+        });
+      })
+      .catch((error) => {
+        console.error("Firebase initialization failed:", error);
+      });
   }
 
+  private async initializeFirebase(): Promise<void> {
+    if (!this.app) {
+      try {
+        this.firebaseConfig = await this.getFirebaseConfig();
+        if (!this.firebaseConfig) {
+          throw new Error("Firebase configuration not found");
+        }
+        this.app = initializeApp(this.firebaseConfig);
+        this.auth = getAuth();
+        getAnalytics(this.app);
+        console.log("Firebase initialized successfully");
+      } catch (error) {
+        console.error("Error initializing Firebase:", error);
+        throw error;
+      }
+    }
+    return Promise.resolve();
+  }
+
+  // Rest of the methods remain the same...
   async register(email: string, password: string, name: string): Promise<void> {
     try {
-      this.firebaseConfig = await this.getFirebaseConfig();
-      if (!this.firebaseConfig) {
-        throw new Error("Firebase configuration not found");
-      } else {
-        const app = initializeApp(this.firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            const user = {
-              id: userCredential.user.uid,
-              email,
-              name,
-              wordsViewed: 0,
-              registrationDate: new Date(),
-              lastLoginDate: new Date(),
-            };
-            this.currentUserSubject.next(user);
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            throw error;
-          });
-      }
+      await this.initializeFirebase();
+      const userCredential = await createUserWithEmailAndPassword(
+        this.auth,
+        email,
+        password
+      );
+      const user = {
+        id: userCredential.user.uid,
+        email,
+        name,
+        wordsViewed: 0,
+        registrationDate: new Date(),
+        lastLoginDate: new Date(),
+      };
+      this.currentUserSubject.next(user);
+      const token = await userCredential.user.getIdToken();
+      localStorage.setItem(this.authTokenKey, token);
+      this.isLoggedInSubject.next(true);
+      console.log(
+        "Registration successful, isLoggedIn:",
+        this.isLoggedInSubject.value
+      );
     } catch (error) {
+      console.error("Registration error:", error);
       throw error;
-    }
-  }
-
-  async updateWordsViewed(userId: string, count: number): Promise<void> {
-    const currentUser = this.currentUserSubject.value;
-    if (currentUser) {
-      this.currentUserSubject.next({ ...currentUser, wordsViewed: count });
     }
   }
 
   async login(email: string, password: string): Promise<void> {
     try {
-      this.firebaseConfig = await this.getFirebaseConfig();
-      if (!this.firebaseConfig) {
-        throw new Error("Firebase configuration not found");
-      } else {
-        const app = initializeApp(this.firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth();
-        const userCredential = await signInWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        const user = {
-          id: userCredential.user.uid,
-          email: userCredential.user.email || "",
-          name: userCredential.user.displayName || "",
-          wordsViewed: 0,
-          registrationDate: new Date(),
-          lastLoginDate: new Date(),
-        };
-        this.currentUserSubject.next(user);
-        const token = await auth.currentUser?.getIdToken(); // Get Firebase ID token
-        if (token) {
-          localStorage.setItem(this.authTokenKey, token);
-        }
-        this.isLoggedInSubject.next(true); //update login state
-        console.log(this.isLoggedInSubject.value);
-        this.router.navigate(["/home"]); //redirect after successful login
-        console.log("Login Successful");
-      }
+      await this.initializeFirebase();
+      const userCredential = await signInWithEmailAndPassword(
+        this.auth,
+        email,
+        password
+      );
+      
+      const user = {
+        id: userCredential.user.uid,
+        email: userCredential.user.email || "",
+        name: userCredential.user.displayName || "",
+        wordsViewed: 0,
+        registrationDate: new Date(),
+        lastLoginDate: new Date(),
+      };
+      
+      this.currentUserSubject.next(user);
+      const token = await userCredential.user.getIdToken();
+      localStorage.setItem(this.authTokenKey, token);
+      
+      // Explicitly set login state and emit a new value
+      this.isLoggedInSubject.next(true);
+      console.log("Login successful, isLoggedIn value is now:", this.isLoggedInSubject.value);
+      
+      // Debug information
+      setTimeout(() => {
+        console.log("Checking login state after timeout:", this.isLoggedInSubject.value);
+      }, 500);
     } catch (error) {
-      // Log any errors that occur during login
-      //console.log(error);
-      // Reset the current user to null since login failed
-      //this.currentUserSubject.next(null);
-      // Commented out throwing the error to prevent crashes
-      this.isLoggedInSubject.next(false); //update login state on error
-      console.log(this.isLoggedInSubject.value)
-      localStorage.removeItem(this.authTokenKey); // remove any potentially stored token
+      console.error("Login error:", error);
+      this.isLoggedInSubject.next(false);
+      localStorage.removeItem(this.authTokenKey);
       throw error;
     }
   }
-  
+
   async logout(): Promise<void> {
     try {
-      const auth = getAuth();
-      await auth.signOut();
+      await this.auth.signOut();
       this.currentUserSubject.next(null);
-      localStorage.removeItem(this.authTokenKey); //clear the stored token
+      localStorage.removeItem(this.authTokenKey);
       this.isLoggedInSubject.next(false);
-      this.router.navigate(["/login"]); //redirect to login page
+      console.log(
+        "Logout successful, isLoggedIn:",
+        this.isLoggedInSubject.value
+      );
+      this.router.navigate(["/login"]);
     } catch (error) {
-      console.error("Logout error:", error); // Log the error for debugging
-      this.isLoggedInSubject.next(false); // Ensure isLoggedIn is false
-      this.router.navigate(["/login"]); // Redirect to login page even on error
+      console.error("Logout error:", error);
+      this.isLoggedInSubject.next(false);
+      this.router.navigate(["/login"]);
       throw error;
+    }
+  }
+  async updateWordsViewed(userId: string, count: number): Promise<void> {
+    const currentUser = this.currentUserSubject.value;
+    if (currentUser) {
+      this.currentUserSubject.next({ ...currentUser, wordsViewed: count });
     }
   }
 
@@ -244,4 +277,6 @@ export class AuthService {
   getAuthToken(): string | null {
     return localStorage.getItem(this.authTokenKey);
   }
+  // Keep the rest of your methods but make sure they use this.auth instead of getAuth()
+  // ...
 }

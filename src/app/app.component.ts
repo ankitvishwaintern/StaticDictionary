@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -15,14 +16,18 @@ import { AuthService } from './services/auth.service';
         <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
       </div>
       <div class="auth-links">
-        <ng-container *ngIf="!isLoggedIn">
-          <a routerLink="/login" routerLinkActive="active">Login</a>
-        </ng-container>
-        <ng-container *ngIf="isLoggedIn">
-          <button (click)="logout()" style="background: none; border: none; color: white; cursor: pointer; padding: 0.5rem 1rem; border-radius: 4px; transition: background-color 0.3s;">Logout</button>
-        </ng-container>
-      </div>
+      <!-- For debugging -->
+      <span style="color: white; margin-right: 10px;">Auth: {{isLoggedIn ? 'IN' : 'OUT'}}</span>
+      
+      <!-- Simplified version -->
+      <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+      <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+    </div>
     </nav>
+    <div>
+      <!-- Only shown during development -->
+      <div style="display: none;">Debug: isLoggedIn = {{isLoggedIn}}</div>
+    </div>
     <router-outlet></router-outlet>
   `,
   styles: [`
@@ -52,21 +57,39 @@ import { AuthService } from './services/auth.service';
     }
   `]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy {
   title = 'picture-dictionary';
-  isLoggedIn : boolean = false;
+  isLoggedIn: boolean = false;
+  private subscription: Subscription = new Subscription();
 
-  constructor(private authService : AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private cdr: ChangeDetectorRef,
+    private zone: NgZone
+  ) {}
 
-  ngOnInit(){
-    console.log('AppComponent : ngOnInit is called');
-    this.authService.isLoggedIn$.subscribe(loggedIn => {
-      console.log('AppComponent : ngOnInit isLoggedIn value from subscription', loggedIn);
-      this.isLoggedIn = loggedIn;
+  ngOnInit() {
+    console.log('AppComponent: ngOnInit is called');
+    
+    // Debug current value
+    console.log('Initial isLoggedIn state:', this.authService.isLoggedIn());
+    
+    this.subscription = this.authService.isLoggedIn$.subscribe(loggedIn => {
+      console.log('AppComponent: isLoggedIn value from subscription', loggedIn);
+      this.zone.run(() => {
+        this.isLoggedIn = loggedIn;
+        console.log('AppComponent: Updated isLoggedIn to', this.isLoggedIn);
+        this.cdr.detectChanges();
+      });
     });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   logout() {
+    console.log('AppComponent: logout called');
     this.authService.logout();
   }
 }

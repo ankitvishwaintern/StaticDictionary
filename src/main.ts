@@ -17,6 +17,7 @@ import { SubscriptionComponent } from './app/components/subscription/subscriptio
 import { PaymentSuccessComponent } from './app/components/PaymentSuccess/payment-success.component';
 import { PaymentCancelComponent } from './app/components/payment-cancel/payment-cancel.component';
 import { PaymentCheckoutComponent } from './app/components/payment-checkout/payment-checkout.component';
+import { AuthService } from './app/services/auth.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -49,9 +50,9 @@ const routes: Routes = [
           <a routerLink="/about" routerLinkActive="active">About Us</a>
           <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
           <a routerLink="/subscription" routerLinkActive="active">Subscribe</a>
-          <a href="#" (click)="showRegisterModal($event)">Register</a>
-          <a routerLink="/login" routerLinkActive="active">Login</a>
-          <a routerLink="/logout" class="logout-link">
+          <a href="#" (click)="showRegisterModal($event)" *ngIf="!isLoggedIn">Register</a>
+          <a routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn">Login</a>
+          <a routerLink="/logout" class="logout-link" *ngIf="isLoggedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
               <polyline points="16 17 21 12 16 7"></polyline>
@@ -217,6 +218,15 @@ const routes: Routes = [
 })
 export class App {
   isRegisterModalVisible = false;
+  isLoggedIn = false;
+
+  constructor(private authService: AuthService) {
+    // Subscribe to authentication state changes
+    this.authService.isLoggedIn$.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+      console.log('Authentication state changed:', isLoggedIn ? 'logged in' : 'logged out');
+    });
+  }
 
   showRegisterModal(event: Event) {
     event.preventDefault();

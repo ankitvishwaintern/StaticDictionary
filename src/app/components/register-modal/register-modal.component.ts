@@ -84,7 +84,7 @@ export class RegisterModalComponent {
   async register() {
     if (this.name && this.email && this.password) {
       try {
-        await this.authService.register(this.email, this.password, this.name).then(p=>{
+        await this.authService.register(this.email, this.password, this.name).then((p:void)=>{
           this.close.emit();
           alert("Registration successful");
         });
