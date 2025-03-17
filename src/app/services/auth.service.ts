@@ -95,7 +95,6 @@ export class AuthService {
     return Promise.resolve();
   }
 
-  // Rest of the methods remain the same...
   async register(email: string, password: string, name: string): Promise<void> {
     try {
       await this.initializeFirebase();
