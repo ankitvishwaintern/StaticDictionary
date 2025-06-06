@@ -1,28 +1,54 @@
 <div class="flashcard" [class.flipped]="isFlipped" (click)="flip()">
   <div class="flashcard-inner">
+    <!-- Front of card -->
     <div class="flashcard-front">
-      <div class="header"></div>
       <div class="content">
-        <div class="picture-container">
+        <div class="picture-section">
           <img [src]="word.picture" [alt]="word.term" class="word-picture">
         </div>
-        <div class="term-container">
-          <h2 class="term">{{word.term}}</h2>
-          <span class="pronunciation-icon" (click)="pronounceWord($event)">🔊</span>
+        
+        <div class="word-section">
+          <div class="term-wrapper">
+            <h2 class="term">{{word.term}}</h2>
+            <button 
+              class="pronunciation-button" 
+              (click)="pronounceWord($event)"
+              aria-label="Pronounce word">
+              🔊
+            </button>
+          </div>
+          <p class="phonetic">/{{word.pronunciation.toLowerCase()}}/</p>
+          <p class="meaning">{{word.meaning}}</p>
         </div>
-        <p class="phonetic">/{{word.pronunciation.toLowerCase()}}/</p>
-        <p class="meaning">{{word.meaning}}</p>
-        <a class="details-link" (click)="flip(); $event.stopPropagation()">Details ➜</a>
+
+        <button 
+          class="details-button" 
+          (click)="flip(); $event.stopPropagation()"
+          aria-label="Show details">
+          Details <span class="arrow">➜</span>
+        </button>
       </div>
     </div>
+
+    <!-- Back of card -->
     <div class="flashcard-back">
       <div class="content">
-        <h3>Meaning:</h3>
-        <p>{{word.meaning}}</p>
-        <h3>Mnemonic:</h3>
-        <p>{{word.mnemonic}}</p>
-        <h3>Usage:</h3>
-        <p>{{word.usage}}</p>
+        <div class="details-section">
+          <section class="detail-item">
+            <h3>Meaning</h3>
+            <p>{{word.meaning}}</p>
+          </section>
+          
+          <section class="detail-item">
+            <h3>Mnemonic</h3>
+            <p>{{word.mnemonic}}</p>
+          </section>
+          
+          <section class="detail-item">
+            <h3>Usage</h3>
+            <p>{{word.usage}}</p>
+          </section>
+        </div>
       </div>
     </div>
   </div>

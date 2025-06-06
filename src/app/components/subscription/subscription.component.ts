@@ -35,7 +35,7 @@ ngOnInit(){
 
   handleCheckout(): void {
     // Add your checkout logic here
-    this.router.navigate(['/payment-checkout']);
+    //this.router.navigate(['/payment-checkout']);
     // console.log('Proceeding to checkout with:', {
     //   product: this.product,
     //   frequency: this.isYearly ? 'yearly' : 'monthly',
@@ -46,6 +46,16 @@ ngOnInit(){
     //   window.location=p.url;
 
     // });
+
+    this.authService.getStripeSession()
+    .then(response => {
+      if (response?.url) {
+        window.location.href = response.url;
+      }
+    })
+    .catch(error => {
+      console.error('Error creating checkout session:', error);
+    });
   }
 
   Test(){

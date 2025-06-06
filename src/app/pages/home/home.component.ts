@@ -12,7 +12,7 @@ import { Word } from '../../word.interface';
   standalone: true,
   imports: [CommonModule, FlashcardComponent, FormsModule, RegisterModalComponent],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   currentWord: Word | null = null;
@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //alert("me being hit");
     this.authService.currentUser$.subscribe(user => {
       this.isRegistered = !!user;
       this.wordsViewed = user?.wordsViewed || 0;

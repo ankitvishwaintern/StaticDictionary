@@ -174,9 +174,20 @@ export class AuthService {
 
   async getStripeSession(): Promise<any | undefined> {
     //return await this.http.get<FirebaseConfig>('http://localhost:5225/api/Config/firebase').toPromise();
-    //return await this.http.post<any>('http://localhost:5225/api/payments/checkout',null).toPromise();
-    return await this.http.post<any>('https://picturedictionary-bugef2hseebsh2bn.eastus2-01.azurewebsites.net/api/payments/checkout',null).toPromise();
+    return await this.http.post<any>('http://localhost:5225/api/payments/checkout',null).toPromise();
+    //return await this.http.post<any>('https://picturedictionary-bugef2hseebsh2bn.eastus2-01.azurewebsites.net/api/payments/checkout',null).toPromise();
 
+
+     //const apiUrl = 'http://localhost:5225/api/payments/checkout';
+
+  //   const apiUrl = 'https://picturedictionary-bugef2hseebsh2bn.eastus2-01.azurewebsites.net/api/payments/checkout';
+  // const body = {
+  //   success_url: `${window.location.origin}/#/?isSuccess=true`,
+  //   cancel_url: `${window.location.origin}/#/?isFailed=true`
+  // };
+
+  
+  // return await this.http.post<any>(apiUrl, body).toPromise();
   }
 
   async getProductList(): Promise<any | undefined> {

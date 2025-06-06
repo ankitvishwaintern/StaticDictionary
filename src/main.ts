@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { RouterModule, provideRouter, Routes } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { RouterModule, provideRouter, Routes, ActivatedRoute } from '@angular/router';
 import { HomeComponent } from './app/pages/home/home.component';
+import { Router } from '@angular/router';
 import { AboutComponent } from './app/pages/about/about.component';
 import { ContactComponent } from './app/pages/contact/contact.component';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
@@ -19,7 +21,7 @@ import { PaymentCancelComponent } from './app/components/payment-cancel/payment-
 import { PaymentCheckoutComponent } from './app/components/payment-checkout/payment-checkout.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
@@ -36,16 +38,21 @@ const routes: Routes = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule, RegisterModalComponent],
-  template: `
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  imports: [CommonModule, RouterModule, HttpClientModule, RegisterModalComponent],  template: `
     <div class="app-container">
       <header>
         <div class="brand">
           <h1>Picture Dictionary</h1>
           <p class="tagline">Learn with Visual Mnemonics</p>
         </div>
-        <nav>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <button class="hamburger" [class.open]="isMenuOpen" (click)="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav [class.open]="isMenuOpen">
+          <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
           <a routerLink="/about" routerLinkActive="active">About Us</a>
           <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
           <a routerLink="/subscription" routerLinkActive="active">Subscribe</a>
@@ -65,16 +72,86 @@ const routes: Routes = [
       </main>
       <app-register-modal *ngIf="isRegisterModalVisible" (close)="hideRegisterModal()"></app-register-modal>
     </div>
-  `,
-  styles: [`
+  `,  styles: [`
+    :host {
+      display: block;
+      min-height: 100vh;
+      background-color: #f8f9fa;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+    }
+
+    .hamburger span {
+      width: 30px;
+      height: 3px;
+      background-color: #666;
+      border-radius: 10px;
+      transition: all 0.3s linear;
+      position: relative;
+      transform-origin: 1px;
+    }
+
+    .hamburger.open span:first-child {
+      transform: rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    @media (max-width: 767px) {
+      .hamburger {
+        display: flex;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        padding: 4rem 2rem 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 5;
+      }
+
+      nav.open {
+        transform: translateX(0);
+      }
+    }
+
     .app-container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0.5rem;
       width: 100%;
     }
 
-    header {
+    @media (max-width: 480px) {
+      .app-container {
+        padding: 0.25rem;
+      }
+    }    header {
       margin-bottom: 0.25rem;
       padding: 0.5rem;
       background: white;
@@ -82,132 +159,134 @@ const routes: Routes = [
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+      width: 100%;
+    }    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.25rem;
+      width: 100%;
     }
 
     @media (min-width: 768px) {
       header {
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
+        padding: 1rem 2rem;
       }
-    }
 
-    nav {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0;
-      justify-content: flex-start;
-      width: 100%;
-    }
-
-    @media (min-width: 768px) {
-      nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: auto;
-        gap: 0.5rem;
-        padding: 0;
-        flex-grow: 1;
-        justify-content: flex-end;
-      }
-    }
-
-    .auth-links {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      width: 100%;
-      justify-content: center;
-      padding-top: 0.5rem;
-      border-top: 1px solid #eee;
-    }
-
-    @media (min-width: 768px) {
-      .auth-links {
-        width: auto;
-        margin-left: auto;
-        padding-top: 0;
-        border-top: none;
-      }
-    }
-
-    .brand {
-      text-align: left;
-      padding: 1rem 1rem 0 1rem;
-      width: 100%;
-    }
-
-    @media (min-width: 768px) {
       .brand {
-        padding: 0 0 0 1rem;
-        width: auto;
-        min-width: 250px;
+        align-items: flex-start;
+        width: 50%;
+        padding: 0;
       }
     }
 
     h1 {
       color: #333;
       margin: 0;
-      font-size: 1.25rem;
-      line-height: 1;
-      white-space: nowrap;
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      line-height: 1.2;
+      text-align: center;
     }
 
     .tagline {
       color: #666;
-      margin: 0.15rem 0 0;
+      margin: 0.25rem 0 0;
       font-style: italic;
-      font-size: 0.8rem;
-      white-space: nowrap;
+      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+      text-align: center;
     }
 
-    nav a {
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        margin-top: 0;
+        margin-left: 2rem;
+      }
+    }    nav a {
       color: #666;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
       transition: all 0.3s;
-      font-size: 0.9rem;
-      text-align: left;
-      width: auto;
+      font-size: 0.85rem;
+      text-align: center;
+      width: 100%;
+      background: #f8f9fa;
     }
 
     @media (min-width: 768px) {
       nav a {
-        white-space: nowrap;
+        width: auto;
+        background: transparent;
       }
     }
 
     nav a:hover {
       color: #4CAF50;
-      background: #f5f5f5;
+      background: #f0f0f0;
     }
 
     nav a.active {
       color: #4CAF50;
-      font-weight: bold;
+      font-weight: 600;
+      background: #e8f5e9;
     }
 
     main {
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 0.75rem;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      min-height: calc(100vh - 200px);
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 0.75rem;
+        border-radius: 4px;
+      }
     }
 
     .logout-link {
       display: flex;
       align-items: center;
-      padding: 0.25rem;
+      justify-content: center;
+      padding: 0.75rem;
+      width: 100%;
+    }
+
+    @media (min-width: 768px) {
+      .logout-link {
+        width: auto;
+        padding: 0.75rem 1rem;
+      }
     }
 
     .logout-link svg {
       color: #666;
       transition: color 0.3s;
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .logout-link svg {
+        width: 16px;
+        height: 16px;
+      }
     }
 
     .logout-link:hover svg {
@@ -217,6 +296,38 @@ const routes: Routes = [
 })
 export class App {
   isRegisterModalVisible = false;
+  isMenuOpen = false;
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    //alert("A");
+     this.route.queryParams.subscribe(params => {
+      const isSuccess = params['isSuccess'];
+      const isFailed = params['isFailed'];
+      
+      if (isSuccess === '1' || isSuccess === 'true') {
+        this.router.navigate(['/payment-success']);
+      } else if (isFailed === '1' || isFailed === 'true') {
+        this.router.navigate(['/payment-cancel']);
+      }
+    });
+  }
+  
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const isSuccess = params['isSuccess'];
+      const isFailed = params['isFailed'];
+      
+      if (isSuccess === 'Y') {
+        this.router.navigate(['/payment-success'], { replaceUrl: true });
+      } else if (isFailed === 'Y') {
+        this.router.navigate(['/payment-cancel'], { replaceUrl: true });
+      }
+    });
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   showRegisterModal(event: Event) {
     event.preventDefault();

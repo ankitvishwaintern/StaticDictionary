@@ -7,21 +7,14 @@ import { Word } from '../word.interface';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './flashcard.component.html',
-  styleUrls: ['./flashcard.component.css']
+  styleUrls: ['./flashcard.component.scss']
 })
 export class FlashcardComponent {
   @Input() word!: Word;
   isFlipped = false;
 
   flip() {
-    this.isFlipped = !this.isFlipped;
-    // if ('speechSynthesis' in window) {
-    //   const synth = window.speechSynthesis;
-    //   const utterance = new SpeechSynthesisUtterance('hello');
-    //   synth.speak(utterance);
-    // } else {
-    //   console.log('Text-to-speech not supported');
-    // }
+    this.isFlipped = !this.isFlipped;   
   }
 
   pronounceWord(event: MouseEvent) {
