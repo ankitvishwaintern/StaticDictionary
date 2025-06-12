@@ -49,6 +49,7 @@ ngOnInit(){
 
     this.authService.getStripeSession()
     .then(response => {
+      
       if (response?.url) {
         window.location.href = response.url;
       }
