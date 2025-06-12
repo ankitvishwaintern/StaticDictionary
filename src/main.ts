@@ -302,7 +302,7 @@ export class App {
     //alert("A");
      this.route.queryParams.subscribe(params => {
       const isSuccess = params['isSuccess'];
-      const isFailed = params['isFailed'];
+      const isFailed = params['isfailed'];
       
       if (isSuccess === '1' || isSuccess === 'true') {
         this.router.navigate(['/payment-success']);
